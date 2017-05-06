@@ -1,0 +1,39 @@
+<div class="nav">
+  <center>
+    <ul class="inline">
+      {% for item in site.data.nav %}
+        {% if item.collection %}
+          {% assign collection = site[item.collection] | sort: "title" %}
+          <li><a href="{{ collection[0].url }}">{{ item.title }}</a></li>
+          {% if item.collection == page.section %}
+            {% assign subnav = collection %}
+          {% endif %}
+        {% else %}
+          {% if item.rss %}
+            {% assign url = item.url | prepend: site.baseurl  %}
+          {% else %}
+            {% assign url = item.url %}
+          {% endif %}
+          <li><a href="{{ url }}">{{ item.title }}</a></li>
+          {% if item.section == page.section %}
+            {% assign subnav = item.subnav %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </center>
+</div>
+
+{% if subnav %}
+  <div class="nav">
+    <center>
+      <ul class="inline">
+        {% for item in subnav %}
+        <li class="{% if item.url == page.url %}active{% endif %}">
+          <a href="{{ item.url }}">{{ item.title }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </center>
+  </div>
+{% endif %}

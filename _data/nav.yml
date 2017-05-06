@@ -1,0 +1,20 @@
+---
+- title: HOME
+  url: /
+- title: BLOG
+  url: /blog/archive/
+  section: blog
+  subnav:
+    - title: archive
+      url: /blog/archive/
+    - title: tags
+      url: /blog/tags/
+- title: ABOUT
+  url: /about/me/
+  section: about
+  subnav:
+    - title: me
+      url: /about/me/
+- title: RSS
+  url: /feed.xml
+  rss: true
