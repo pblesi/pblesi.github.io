@@ -1,0 +1,73 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+  <!--<![endif]-->
+
+  {% include head.html %}
+
+  <!-- BODY -->
+  <body id="post-index">
+    {% include browser-upgrade.html %}
+    {% include header.html %}
+    {% include navigation.html %}
+
+    <div id="main" role="main">
+      <article class="hentry">
+
+        <!-- MAIN -->
+        <!-- PROJECT IMAGE -->
+        <div class="main-img">
+          <a href="/assets/img/{{ page.image }}">
+            <img src="/assets/img/{{page.image}}" alt="{{page.title}}" width="200">
+          </a>
+        </div>
+
+        <h1 class="entry-title">
+          <a>{{ page.title }}</a>
+        </h1>
+
+
+        <!-- PROJECT LINKS -->
+        <div class="project-links">
+          <span>
+            {% for link in page.project_links %}
+            <a href="{{ link.url }}">{{ link.title }}</a>
+            {% unless forloop.last %}
+              &nbsp;&nbsp;|&nbsp;&nbsp;
+            {% endunless %}
+            {% endfor %}
+          </span>
+        </div>
+
+        <!-- PROJECT CONTENT -->
+        <div class="entry-content">
+          {{ page.content }}
+        </div>
+
+        <!--- DIVIDING LINE -->
+        <hr>
+
+        <!-- POST TAGS -->
+        <div class="inline-tags">
+          <span>
+            {% for tag in page.tags %}
+            <a href="/tags/#{{tag}}">#{{ tag }}&nbsp;&nbsp;&nbsp;</a>
+            {% endfor %}
+          </span>
+        </div>
+
+        <br>
+
+        <!-- POST DATE -->
+        <div class="post-date">
+          {{ page.date-string }}
+        </div>
+      </article>
+    </div>
+  </body>
+
+  {% include footer.html %}
+</html>

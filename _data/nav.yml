@@ -9,6 +9,12 @@
       url: /blog/archive/
     - title: tags
       url: /blog/tags/
+- title: PROJECTS
+  url: /projects/list
+  section: projects
+  subnav:
+    - title: list
+      url: /projects/list/
 - title: ABOUT
   url: /about/me/
   section: about

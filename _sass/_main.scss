@@ -121,6 +121,12 @@ svg:not(:root) {
   overflow: hidden;
 }
 
+.main-img {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 /*--- PAGINATION ------------------------------------------------------------*/
 
 .pagination {
@@ -175,6 +181,18 @@ svg:not(:root) {
 /*--- TAGS ------------------------------------------------------------------*/
 
 .inline-tags {
+    font-size: 14px;
+
+    a {
+        color: #F2992E;
+    }
+
+    &:hover {
+        color: lighten(#F2992E,20);
+    }
+}
+
+.project-links {
     font-size: 14px;
 
     a {

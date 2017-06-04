@@ -30,6 +30,17 @@ paginate: 5
 
 permalink: /:categories/:year-:month-:day/:title
 
+collections:
+  projects:
+    output: true
+    permalink: /:collection/:path/
+defaults:
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+
 # Build settings
 markdown: kramdown
 gems:
