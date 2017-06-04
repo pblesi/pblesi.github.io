@@ -17,6 +17,17 @@
     <div id="main" role="main">
       <article class="hentry">
 
+        <!-- POST DATE -->
+        {% if page.date %}
+          <div class="post-date">
+            <span class="entry-date date published updated">
+              <time datetime="{{ page.date | date_to_xmlschema }}">
+                <a href="{{ site.url }}{{ page.url }}">{{ page.date | date: "%B %d, %Y" }}</a>
+              </time>
+            </span>
+          </div>
+        {% endif %}
+
         <!-- MAIN -->
         <h1 class="entry-title">
           <a>{{ page.title }}</a>
