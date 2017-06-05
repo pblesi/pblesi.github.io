@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: patrick.ble.si
+title: dev/blesi
 description: > # this means to ignore newlines until "baseurl:"
   This is Patrick Blesi's personal site. It holds his blog and
   shares some info about him.
