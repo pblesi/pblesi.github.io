@@ -53,3 +53,5 @@ exclude:
   - Gemfile.lock
   - LICENSE
   - vendor
+
+github: [metadata]
