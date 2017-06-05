@@ -28,7 +28,7 @@ owner:
 # Number of posts to show on home page
 paginate: 5
 
-permalink: /:categories/:year-:month-:day/:title
+permalink: /:categories/:title
 
 collections:
   projects:
