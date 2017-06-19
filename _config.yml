@@ -41,6 +41,9 @@ defaults:
     values:
       layout: project
 
+kramdown:
+  parse_block_html: true
+
 # Build settings
 markdown: kramdown
 gems:
