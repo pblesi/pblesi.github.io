@@ -21,6 +21,8 @@
   subnav:
     - title: me
       url: /about/me/
+    - title: resume
+      url: /blesi.patrick.resume.09-12-17.general.r01.pdf
 - title: RSS
   url: /feed.xml
   rss: true
