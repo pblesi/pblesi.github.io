@@ -58,6 +58,10 @@
         </div>
       </article>
     </div>
+
+    {% if jekyll.environment == 'production' %}
+    {% include analytics.html %}
+    {% endif %}
   </body>
 
   {% include footer.html %}
