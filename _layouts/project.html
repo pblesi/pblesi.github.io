@@ -18,13 +18,6 @@
       <article class="hentry">
 
         <!-- MAIN -->
-        <!-- PROJECT IMAGE -->
-        <div class="main-img">
-          <a href="/assets/img/{{ page.image }}">
-            <img src="/assets/img/{{page.image}}" alt="{{page.title}}" width="200">
-          </a>
-        </div>
-
         <h1 class="entry-title">
           <a>{{ page.title }}</a>
         </h1>
@@ -44,6 +37,13 @@
         <!-- PROJECT CONTENT -->
         <div class="entry-content">
           {{ content }}
+        </div>
+
+        <!-- PROJECT IMAGE -->
+        <div class="main-img">
+          <a href="/assets/img/{{ page.image }}">
+            <img src="/assets/img/{{page.image}}" alt="{{page.title}}" width="300">
+          </a>
         </div>
 
         <!--- DIVIDING LINE -->
