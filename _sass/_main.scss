@@ -186,15 +186,14 @@ svg:not(:root) {
 /*--- TAGS ------------------------------------------------------------------*/
 
 .inline-tags {
-    font-size: 14px;
+  font-size: 14px;
 
-    a {
-        color: #F2992E;
-    }
-
+  a {
+    color: #F2992E;
     &:hover {
-        color: lighten(#F2992E,20);
+      color: lighten(#F2992E,20);
     }
+  }
 }
 
 .project-links {
