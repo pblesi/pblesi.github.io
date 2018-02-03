@@ -38,6 +38,24 @@
           {{ content }}
         </div>
 
+        {% if page.related_posts %}
+          <br>
+          <!-- RELATED POSTS -->
+          <div class="inline-tags">
+            <span>
+              Related:
+              {% for related_post in page.related_posts %}
+                {% for post in site.posts %}
+                {% if post.slug == related_post %}
+                  <a href="{{ site.github.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}&nbsp&nbsp&nbsp</a>
+                {% endif %}
+                {% endfor %}
+              {% endfor %}
+            </span>
+          </div>
+          <br>
+        {% endif %}
+
         <!--- DIVIDING LINE -->
         <hr>
 
