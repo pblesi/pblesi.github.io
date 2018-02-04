@@ -3,6 +3,8 @@ layout: post
 title: Building a Wifi Touch Light
 date: '2017-12-28T19:45:00.001-06:00'
 author: Patrick Blesi
+related_posts:
+  - particle-manual-wifi-creds
 tags:
 - DIY
 - Arduino
