@@ -54,8 +54,8 @@ void setup() {
   WiFi.on();
   WiFi.disconnect();
   WiFi.clearCredentials();
-  WiFi.setCredentials("SSID", "password");
-  WiFi.setCredentials("ALTERNATE_SSID", "other_password");
+  WiFi.setCredentials("SSID", "password", WPA2, WLAN_CIPHER_AES);
+  WiFi.setCredentials("ALTERNATE_SSID", "other_password", WPA2, WLAN_CIPHER_AES);
   WiFi.connect();
   waitUntil(WiFi.ready);
   Particle.connect();
@@ -69,7 +69,15 @@ void loop() {
 ```
 
 <p>
-You can clean this code up a bit by placing the wifi setup code in its own function:
+You can find more details on `setCredentials` in the [Particle Reference Docs](https://docs.particle.io/reference/firmware/photon/#setcredentials-). The first argument is the name of the wifi access point/router. The second argument is the password to connect to the wifi access point. Both the third and fourth arguments are required if the access point is not accessible when the credentials are set.
+</p>
+
+<p>
+The third argument specifies the authentication procedure. It must be one of `WPA2`, `WPA`, or `WEP`. `WPA2` is the most modern and secure authentication procedure, and `WEP` is the oldest. The fourth argument specifies the security cipher. Possible security cipher options are `WLAN_CIPHER_AES`, `WLAN_CIPHER_TKIP`, and `WLAN_CIPHER_AES_TKIP`. Of these `WLAN_CIPHER_AES` is the most modern and secure, and `WLAN_CIPHER_TKIP` is the oldest. `WLAN_CIPHER_AES_TKIP` is a mixed mode cipher configuration.
+</p>
+
+<p>
+This gives you a working solution, but you can clean this code up a bit by placing the wifi setup code in its own function:
 </p>
 
 ```c++
@@ -89,8 +97,8 @@ void setupWifi() {
   WiFi.on();
   WiFi.disconnect();
   WiFi.clearCredentials();
-  WiFi.setCredentials("SSID", "password");
-  WiFi.setCredentials("ALTERNATE_SSID", "other_password");
+  WiFi.setCredentials("SSID", "password", WPA2, WLAN_CIPHER_AES);
+  WiFi.setCredentials("ALTERNATE_SSID", "other_password", WPA2, WLAN_CIPHER_AES);
   WiFi.connect();
   waitUntil(WiFi.ready);
   Particle.connect();
@@ -106,9 +114,12 @@ This is a pretty good solution, but if you commit your code to a source code man
  * src/wifi_creds.h
  */
 
-const String wifiCredentials[][2] = {
+// See https://docs.particle.io/reference/firmware/photon/#setcredentials- for details
+struct credentials { char *ssid; char *password; int authType; int cipher; };
+
+const credentials wifiCreds[] = {
   // Set wifi creds here (last entry will be tried first when connecting)
-  // {"SSID", "password"}
+  // {.ssid="SSID", .password="password", .authType=WPA2, .cipher=WLAN_CIPHER_AES}
 };
 ```
 
@@ -135,9 +146,10 @@ void setupWifi() {
   WiFi.on();
   WiFi.disconnect();
   WiFi.clearCredentials();
-  int numWifiCredentials = sizeof(wifiCredentials) / sizeof(*wifiCredentials);
-  for (int i = 0; i < numWifiCredentials; i++) {
-    WiFi.setCredentials(wifiCredentials[i][0], wifiCredentials[i][1]);
+  int numWifiCreds = sizeof(wifiCreds) / sizeof(*wifiCreds);
+  for (int i = 0; i < numWifiCreds; i++) {
+    credentials creds = wifiCreds[i];
+    WiFi.setCredentials(creds.ssid, creds.password, creds.authType, creds.cipher);
   }
   WiFi.connect();
   waitUntil(WiFi.ready);
@@ -146,7 +158,7 @@ void setupWifi() {
 ```
 
 <p>
-You can commit `src/wifi_creds.h` to be used as a template, and then not commit this file when you have added credentials.
+You can commit `src/wifi_creds.h` to be used as a template, and then not commit this file when you have added credentials to the `wifiCreds` array.
 </p>
 
 <p>
@@ -162,9 +174,12 @@ What if you want to flash firmware onto your Photon, but don't want to overwrite
 // Uncomment the line below if specifying credentials in this file
 // #define WIFI_CREDENTIALS_SPECIFIED
 
-const String wifiCredentials[][2] = {
+// See https://docs.particle.io/reference/firmware/photon/#setcredentials- for details
+struct credentials { char *ssid; char *password; int authType; int cipher; };
+
+const credentials wifiCreds[] = {
   // Set wifi creds here (last entry will be tried first when connecting)
-  // {"SSID", "password"}
+  // {.ssid="SSID", .password="password", .authType=WPA2, .cipher=WLAN_CIPHER_AES}
 };
 ```
 
@@ -195,9 +210,10 @@ void setupWifi() {
   WiFi.on();
   WiFi.disconnect();
   WiFi.clearCredentials();
-  int numWifiCredentials = sizeof(wifiCredentials) / sizeof(*wifiCredentials);
-  for (int i = 0; i < numWifiCredentials; i++) {
-    WiFi.setCredentials(wifiCredentials[i][0], wifiCredentials[i][1]);
+  int numWifiCreds = sizeof(wifiCreds) / sizeof(*wifiCreds);
+  for (int i = 0; i < numWifiCreds; i++) {
+    credentials creds = wifiCreds[i];
+    WiFi.setCredentials(creds.ssid, creds.password, creds.authType, creds.cipher);
   }
   WiFi.connect();
   waitUntil(WiFi.ready);
