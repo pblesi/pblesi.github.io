@@ -35,7 +35,7 @@ Below are the materials, supplies, and tools I used to make my touch lamps.
 
 ### Materials
 
-* [Unifun Touch Lamp](https://www.amazon.com/gp/product/B074L1QSBY/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&tag=pblesi-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=B074L1QSBY&linkId=ac8c58140a8b1f79723a7b1ac69ed54f) ($15 on Amazon with code 6PZD8VVK)
+* [Unifun Touch Lamp](https://amzn.to/2DxjlnQ) ($18)
 * [Particle Photon](https://www.adafruit.com/product/2722) without headers ($19)
 * [NeoPixel Ring 24](https://www.adafruit.com/product/1586) ($17)
 * [10M-Ohm Resistor](https://www.radioshack.com/products/radioshack-10m-ohm-1-4-watt-carbon-film-resistor-5-pack) ($1)
