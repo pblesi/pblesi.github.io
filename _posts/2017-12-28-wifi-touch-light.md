@@ -45,7 +45,7 @@ Below are the materials, supplies, and tools I used to make my touch lamps.
 
 ### Supplies
 
-* Wire (18 gauge)
+* Wire (gauge 22AWG)
 * Solder
 * Hot Glue
 * Goo Gone to remove sticky adhesive from the bottom of the lamp
