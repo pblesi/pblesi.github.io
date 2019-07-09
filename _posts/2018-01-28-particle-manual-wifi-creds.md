@@ -5,6 +5,7 @@ date: '2018-01-28T19:45:00.001-06:00'
 author: Patrick Blesi
 related_posts:
   - wifi-touch-light
+  - manual-switch-touch-lights
 tags:
   - DIY
   - Particle Photon

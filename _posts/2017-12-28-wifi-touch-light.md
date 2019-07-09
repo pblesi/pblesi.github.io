@@ -5,6 +5,7 @@ date: '2017-12-28T19:45:00.001-06:00'
 author: Patrick Blesi
 related_posts:
   - particle-manual-wifi-creds
+  - manual-switch-touch-lights
 tags:
 - DIY
 - Arduino
@@ -96,7 +97,7 @@ The first step is to disassemble your Unifun Touch Lamp. The finished product sh
 Once you have your lamp disassembled, you need to prepare it to be reassembled with your wifi-enabled components.
 
 1. Use Goo Gone or some other solvent to remove the sticky residue off of the bottom plate of the lamp.
-1. Use a 3/32" drill bit to drill a whole through the center of the battery compartment of the white dome.
+1. Use a 3/32" drill bit to drill a hole through the center of the battery compartment of the white dome.
 1. Cut a 6-3/4" piece of wire and solder it to the touch plate.
 
 <p>
