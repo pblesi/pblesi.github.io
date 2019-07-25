@@ -6,6 +6,7 @@ author: Patrick Blesi
 related_posts:
   - wifi-touch-light
   - particle-manual-wifi-creds
+comments: true
 tags:
   - DIY
   - Particle Photon

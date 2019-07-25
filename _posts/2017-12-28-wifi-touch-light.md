@@ -6,6 +6,7 @@ author: Patrick Blesi
 related_posts:
   - particle-manual-wifi-creds
   - manual-switch-touch-lights
+comments: true
 tags:
 - DIY
 - Arduino
