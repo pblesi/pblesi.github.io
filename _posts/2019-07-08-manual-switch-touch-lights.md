@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Manual Switch Touch Lights
+image: /assets/img/manual_switch_touch_lights_01.png
 date: '2019-07-08T12:35:00.000-05:00'
 author: Patrick Blesi
 related_posts:
