@@ -10,29 +10,23 @@ section: projects
     <hr>
 </article>
 
-{% for project in site.projects %}
-    {% capture this_year %}{{ project.date | date: "%Y" }}{% endcapture %}
-    {% assign next_index = forloop.index0 | plus: 1 %}
-    {% capture next_year %}{{ site.projects[next_index].date | date: "%Y" }}{% endcapture %}
+{%
+  assign projects_by_year = site.projects
+  | group_by_exp: "project", "project.date | date: '%Y'"
+  | sort:"title"
+  | reverse
+%}
 
-    {% if forloop.first %}
-      <article>
-        <h2 id="{{ this_year }}-ref" style="color:black;" class="entry-title">{{ this_year }}</h2>
-        <ul>
-    {% endif %}
-      <li class="entry-title">
-        <a href="{{ site.github.url }}{{ project.url }}" title="{{ project.title }}">{{ project.title }}</a>
-      </li>
-    {% unless forloop.last %}
-      {% if this_year != next_year %}
-          </ul>
-        </article>
-        <article>
-          <h2 id="{{ next_year }}-ref" style="color:black;" class="entry-title">{{next_year}}</h2>
-          <ul>
-      {% endif %}
-    {% else %}
-        </ul>
-      </article>
-    {% endunless %}
+{% for year in projects_by_year %}
+<article>
+  <h2 id="{{ year.name }}-ref" style="color:black;" class="entry-title">{{ year.name }}</h2>
+  <ul>
+    {% assign projects = year.items | sort:"title" %}
+    {% for project in projects %}
+    <li class="entry-title">
+    <a href="{{ site.github.url }}{{ project.url }}" title="{{ project.title }}">{{ project.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</article>
 {% endfor %}
