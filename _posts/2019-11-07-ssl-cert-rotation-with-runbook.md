@@ -6,6 +6,8 @@ date: '2019-11-07T11:00:00.000-05:00'
 author: Patrick Blesi
 comments: true
 tags:
+  - Automation
+  - Devops
   - Ruby
   - Runbook
 modified_time: '2019-11-07T11:00:00.000-05:00'
