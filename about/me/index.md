@@ -5,8 +5,8 @@ section: about
 ---
 
 <p>
-Hi, I'm Patrick Blesi. I'm a developer/engineering manager who works at [Braintree](https://www.braintreepayments.com/), a payments processing company and subsidiary of [PayPal](https://www.paypal.com/us/home).
-I'm a former [teacher](https://www.teachforamerica.org/), current husband, and puppy parent. I live in [Chicago](https://en.wikipedia.org/wiki/Chicago), learned things at
+Hi, I'm Patrick Blesi. I'm a developer/engineering manager who works at [Google](https://cloud.google.com/).
+I'm a former [teacher](https://www.teachforamerica.org/), current husband, and puppy parent. I live in [Pittsburgh](https://en.wikipedia.org/wiki/Pittsburgh), spent a lot of time in [Chicago](https://en.wikipedia.org/wiki/Chicago), learned things at
 [Wisconsin](http://www.wisc.edu/), and grew up in [Minnesota](https://en.wikipedia.org/wiki/Eden_Prairie,_Minnesota).
 </p>
 
