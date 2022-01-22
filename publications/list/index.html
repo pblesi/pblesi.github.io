@@ -1,0 +1,32 @@
+---
+title: Publications
+layout: post-index
+section: publications
+---
+<article>
+    <h1 class="entry-title">
+        <a>{{ page.title }}</a>
+    </h1>
+    <hr>
+</article>
+
+{%
+  assign publications_by_year = site.publications
+  | group_by_exp: "publication", "publication.date | date: '%Y'"
+  | sort:"title"
+  | reverse
+%}
+
+{% for year in publications_by_year %}
+<article>
+  <h2 id="{{ year.name }}-ref" style="color:black;" class="entry-title">{{ year.name }}</h2>
+  <ul>
+    {% assign publications = year.items | sort:"title" %}
+    {% for publication in publications %}
+    <li class="entry-title">
+    <a href="{{ site.github.url }}{{ publication.url }}" title="{{ publication.title }}">{{ publication.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</article>
+{% endfor %}

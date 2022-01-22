@@ -22,6 +22,13 @@
           <a>{{ page.title }}</a>
         </h1>
 
+        <!-- PROJECT IMAGE -->
+        <div class="main-img">
+          <a href="/assets/img/{{ page.image }}">
+            <img src="/assets/img/{{page.image}}" alt="{{page.title}}" width="600">
+          </a>
+        </div>
+
         <!-- PROJECT LINKS -->
         <div class="project-links">
           <span>
@@ -37,13 +44,6 @@
         <!-- PROJECT CONTENT -->
         <div class="entry-content">
           {{ content }}
-        </div>
-
-        <!-- PROJECT IMAGE -->
-        <div class="main-img">
-          <a href="/assets/img/{{ page.image }}">
-            <img src="/assets/img/{{page.image}}" alt="{{page.title}}" width="600">
-          </a>
         </div>
 
         <!--- DIVIDING LINE -->

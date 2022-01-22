@@ -40,12 +40,20 @@ collections:
   projects:
     output: true
     permalink: /:collection/:path/
+  publications:
+    output: true
+    permalink: /:collection/:path/
 defaults:
   - scope:
       path: ""
       type: projects
     values:
       layout: project
+  - scope:
+      path: ""
+      type: publications
+    values:
+      layout: publication
 
 kramdown:
   parse_block_html: true
