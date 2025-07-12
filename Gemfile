@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-ruby "2.5.8"
+ruby "3.4.4"
 
 # Hello! This is where you manage which Jekyll version is used to run.
 # When you want to use a different version, change it below, save the
@@ -15,7 +15,7 @@ ruby "2.5.8"
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
 require 'json'
 require 'open-uri'
-versions = JSON.parse(open('https://pages.github.com/versions.json').read)
+versions = JSON.parse(URI.open('https://pages.github.com/versions.json').read)
 gem "github-pages", versions['github-pages'], group: :jekyll_plugins
 
 # If you have any plugins, put them here!
